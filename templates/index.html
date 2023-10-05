@@ -1,0 +1,526 @@
+
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>BreezyCV - Resume / CV / vCard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta name="description" content="BreezyCV - Resume / CV / vCard Template"/>
+    <meta name="keywords" content="vcard, resposnive, retina, resume, jquery, css3, bootstrap, Material CV, portfolio"/>
+    <meta name="author" content="lmpixels"/>
+    <link rel="shortcut icon" href="favicon.ico">
+
+
+    <link rel="stylesheet" href="{% static "css/reset.css" %}" type="text/css">
+    <link rel="stylesheet" href="{% static "css/bootstrap-grid.min.css" %}" type="text/css">
+    <link rel="stylesheet" href="{% static "css/animations.css" %}" type="text/css">
+    <link rel="stylesheet" href="{% static "css/perfect-scrollbar.css" %}" type="text/css">
+    <link rel="stylesheet" href="{% static "css/owl.carousel.css" %}" type="text/css">
+    <link rel="stylesheet" href="{% static "css/magnific-popup.css" %}" type="text/css">
+    <link rel="stylesheet" href="{% static "css/main.css" %}" type="text/css">
+    <script src="{% static "js/modernizr.custom.js" %}"></script>
+</head>
+
+<body>
+<!-- Animated Background -->
+<div class="lm-animated-bg" style="background-image: url({% static "img/main_bg.png" %});"></div>
+<!-- /Animated Background -->
+
+<!-- Loading animation -->
+<div class="preloader">
+    <div class="preloader-animation">
+        <div class="preloader-spinner">
+        </div>
+    </div>
+</div>
+<!-- /Loading animation -->
+
+<div class="page">
+    <div class="page-content">
+
+        <header id="site_header" class="header mobile-menu-hide">
+            <div class="header-content">
+                <div class="header-photo">
+                    <img src="{{ u.img.url }}" alt="...">
+                </div>
+                <div class="header-titles">
+                    <h2>{{ u.name}}</h2>
+                    <h4>Backend-developer</h4>
+                </div>
+            </div>
+
+            <ul class="main-menu">
+                <li class="active">
+                    <a href="#home" class="nav-anim">
+                        <span class="menu-icon lnr lnr-home"></span>
+                        <span class="link-text">UY</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#about-me" class="nav-anim">
+                        <span class="menu-icon lnr lnr-user"></span>
+                        <span class="link-text">Men Haqimda</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#resume" class="nav-anim">
+                        <span class="menu-icon lnr lnr-graduation-hat"></span>
+                        <span class="link-text">Rezyume</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#portfolio" class="nav-anim">
+                        <span class="menu-icon lnr lnr-briefcase"></span>
+                        <span class="link-text">Portfolio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#blog" class="nav-anim">
+                        <span class="menu-icon lnr lnr-book"></span>
+                        <span class="link-text">Blog</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#contact" class="nav-anim">
+                        <span class="menu-icon lnr lnr-envelope"></span>
+                        <span class="link-text">Bo'glanish</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="social-links">
+                <ul>
+{#                    <li><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>#}
+                    <li><a href="https://www.instagram.com/{{ u.instagram_user }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://t.me/{{ u.telegram_user }}" target="_blank"><i class="fab fa-telegram"></i></a></li>
+                </ul>
+            </div>
+
+
+            <div class="copyrights">© 2023 All rights reserved.</div>
+        </header>
+
+        <!-- Mobile Navigation -->
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <!-- End Mobile Navigation -->
+
+        <!-- Arrows Nav -->
+        <div class="lmpixels-arrows-nav">
+            <div class="lmpixels-arrow-right"><i class="lnr lnr-chevron-right"></i></div>
+            <div class="lmpixels-arrow-left"><i class="lnr lnr-chevron-left"></i></div>
+        </div>
+        <!-- End Arrows Nav -->
+
+        <div class="content-area">
+            <div class="animated-sections">
+                <!-- Home Subpage -->
+                <section data-id="home" class="animated-section start-page">
+                    <div class="section-content vcentered">
+
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div class="title-block">
+                                    <h2>{{ u.name }}</h2>
+                                    <div class="owl-carousel text-rotation">
+                                        <div class="item">
+                                            <div class="sp-subtitle">Backend-developer</div>
+                                        </div>
+
+                                        <div class="item">
+                                            <div class="sp-subtitle">Frontend-developer</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+                <!-- End of Home Subpage -->
+
+                <!-- About Me Subpage -->
+                <section data-id="about-me" class="animated-section">
+                    <div class="page-title">
+                        <h2>Men <span>Haqimda</span></h2>
+                    </div>
+                        <div class="section-content">
+                        <!-- Personal Information -->
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-7 " style="max-width: 50%">
+                                <p>{{ u.about }}</p>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-5">
+                                <div class="info-list">
+                                    <ul>
+                                        <li>
+                                            <span class="title">Age</span>
+                                            <span class="value">{{ u.age }}</span>
+                                        </li>
+
+                                        <li>
+                                            <span class="title">Residence</span>
+                                            <span class="value">Uzbekistan</span>
+                                        </li>
+
+                                        <li>
+                                            <span class="title">Address</span>
+                                            <span class="value">Uzbekistan Fergana Beshariq </span>
+                                        </li>
+
+                                        <li>
+                                            <span class="title">e-mail</span>
+                                            <span class="value"><a
+                                                    href="{{ u.email }}"
+                                                    class="__cf_email__"
+                                                    data-cfemail="71141c10181d311409101c011d145f121e1c">{{ u.email }}</a></span>
+                                        </li>
+
+                                        <li>
+                                            <span class="title">Phone</span>
+                                            <span class="value">{{ u.phone }}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End of Personal Information -->
+
+                        <div class="white-space-50"></div>
+
+                    <!-- Services -->
+
+                    <!-- End of Services -->
+
+                    <div class="white-space-30"></div>
+
+
+                    <div class="white-space-50"></div>
+
+
+                    <div class="white-space-50"></div>
+
+
+                    </div>
+                </section>
+                <!-- End of About Me Subpage -->
+
+                <!-- Resume Subpage -->
+                <section data-id="resume" class="animated-section">
+                    <div class="page-title">
+                        <h2>Rezyume</h2>
+                    </div>
+
+                    <div class="section-content">
+
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-7">
+
+                                <div class="block-title">
+                                    <h3>Ta'lim</h3>
+                                </div>
+
+                                <div class="timeline timeline-second-style clearfix">
+                                    {% for e in Education %}
+                                        <div class="timeline-item clearfix">
+                                            <div class="left-part">
+                                                <small class="item-period">{{ e.time }}</small>
+                                                <span class="item-company">{{ e.name }}</span>
+                                            </div>
+                                            <div class="divider"></div>
+                                            <div class="right-part">
+                                                <h4 class="item-title">{{ e.direc }}</h4>
+                                                <p>{{ e.desc }}</p>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+
+                                </div>
+
+                                <div class="white-space-50"></div>
+
+                                <div class="block-title">
+                                    <h3>Tajriba</h3>
+                                </div>
+
+                                <div class="timeline timeline-second-style clearfix">
+
+                                    {% for w in Experience %}
+                                        <div class="timeline-item clearfix">
+                                            <div class="left-part">
+                                                <h5 class="item-period">{{ w.time }}</h5>
+                                                <span class="item-company">{{ w.name }}</span>
+                                            </div>
+                                            <div class="divider"></div>
+                                            <div class="right-part">
+                                                <h4 class="item-title">{{ w.direc }}</h4>
+                                                <p>{{ w.desc }}</p>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+
+                            </div>
+
+                            <!-- Skills & Certificates -->
+                            <div class="col-xs-12 col-sm-5">
+                                <!-- Design Skills -->
+                                <div class="block-title">
+                                    <h3>Kod <span>Ko'nikmalar</span></h3>
+                                </div>
+
+                                <div class="skills-info skills-second-style">
+
+
+                                    {% for x in Setting %}
+                                        <div class="skill clearfix">
+                                            <h4>{{ x.key }}</h4>
+                                            <div class="skill-value">{{ x.value }}%</div>
+                                        </div>
+                                        <div class="skill-container skill-5">
+                                            <div class="skill-percentage" style="width: {{ x.value }}%"></div>
+                                        </div>
+                                    {% endfor %}
+                                    <!-- End of Skill 7 -->
+
+
+                                    <!-- End of Skill 9 -->
+                                </div>
+                                <!-- End of Design Skills -->
+
+                                <div class="white-space-10"></div>
+
+
+                                <div class="white-space-10"></div>
+
+
+                            </div>
+                            <!-- End of Skills & Certificates -->
+                        </div>
+
+                        <div class="white-space-50"></div>
+
+
+                    </div>
+                    <!-- End of Certificates -->
+                </section>
+                <!-- Portfolio Subpage -->
+                <section data-id="portfolio" class="animated-section">
+                    <div class="page-title">
+                        <h2>Portfolio</h2>
+                    </div>
+
+                    <div class="section-content">
+
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12">
+                                <!-- Portfolio Content -->
+                                <div class="portfolio-content">
+
+
+                                    <!-- Portfolio Grid -->
+                                    <div class="portfolio-grid three-columns">
+                                        {% for p in Portfolio %}
+                                            <figure class="item lbimage"
+                                                    data-groups='["category_all", "category_mockups"]'>
+                                                <div class="portfolio-item-img">
+                                                    <img style="height: 230px;max-width: 350px" src="{{ p.img.url }}"
+                                                         alt="{{ p.title }}"
+                                                         title=""/>
+                                                    <a class="lightbox" title="{{ p.title }}"
+                                                       href="{{ p.img.url }}"></a>
+                                                </div>
+
+                                                <i class="far fa-image"></i>
+                                                <a target="_blank" href="{{ p.url }}" class="name">
+                                                    <h5>{{ p.title }}</h5></a>
+                                            </figure>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <!-- End of Portfolio Content -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- End of Portfolio Subpage -->
+
+                <!-- Blog Subpage -->
+                <section data-id="blog" class="animated-section">
+                    <div class="page-title">
+                        <h2>Blog</h2>
+                    </div>
+
+                    <div class="section-content">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12">
+                                <div class="blog-masonry two-columns clearfix">
+
+                                    <!-- Blog Post 1 -->
+                                    {% for b in Blog %}
+                                        <div class="item post-1">
+                                            <div class="blog-card">
+                                                <div class="media-block">
+                                                    <div class="category">
+                                                        <a href="#" title="View all posts in Design">{{ b.type }}</a>
+                                                    </div>
+                                                    <a href="">
+                                                        <img src="{{ b.img.url }}"
+                                                             class="size-blog-masonry-image-two-c"
+                                                             alt="Why I Switched to Sketch For UI Design" title=""/>
+                                                        <div class="mask"></div>
+                                                    </a>
+                                                </div>
+                                                <div class="post-info">
+                                                    <div class="post-date">05 Mar 2020</div>
+                                                    <a href="">
+                                                        <h4 class="blog-item-title">{{ b.title }}</h4>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </section>
+                <!-- End of Blog Subpage -->
+
+                <!-- Contact Subpage -->
+                <section data-id="contact" class="animated-section">
+                    <div class="page-title">
+                        <h2>Bo'glanish</h2>
+                    </div>
+
+                    <div class="section-content">
+
+                        <div class="row">
+                            <!-- Contact Info -->
+                            <div class="col-xs-12 col-sm-4">
+                                <div class="lm-info-block gray-default">
+                                    <i class="lnr lnr-map-marker"></i>
+                                    <h4>Uzbekistan</h4>
+                                    <span class="lm-info-block-value"></span>
+                                    <span class="lm-info-block-text"></span>
+                                </div>
+
+                                <div class="lm-info-block gray-default">
+                                    <i class="lnr lnr-phone-handset"></i>
+                                    <h4>{{ u.phone }}</h4>
+                                    <span class="lm-info-block-value"></span>
+                                    <span class="lm-info-block-text"></span>
+                                </div>
+
+                                <div class="lm-info-block gray-default">
+                                    <i class="lnr lnr-envelope"></i>
+                                    <h4><a href="{{ u.email}}" class="__cf_email__"
+                                           data-cfemail="9ffef3fae7dffae7fef2eff3fab1fcf0f2">{{ u.email }}</a>
+                                    </h4>
+                                    <span class="lm-info-block-value"></span>
+                                    <span class="lm-info-block-text"></span>
+                                </div>
+
+
+
+
+                            </div>
+                            <!-- End of Contact Info -->
+
+                            <!-- Contact Form -->
+                            <div class="col-xs-12 col-sm-8">
+
+                                <div class="block-title">
+                                    <h3>Qanday qilib Men <span>Sizga yordam bera olaman?</span></h3>
+                                </div>
+
+                                <form class="contact-form"
+                                      action="#"
+                                      method="post">
+                                    {% csrf_token %}
+                                    <div class="messages"></div>
+
+                                    <div class="controls two-columns">
+                                        <div class="fields clearfix">
+                                            <div class="left-column">
+                                                <div class="form-group form-group-with-icon">
+                                                    <input id="form_name" type="text" name="name" class="form-control"
+                                                           placeholder="" required="required"
+                                                           data-error="Name is required.">
+                                                    <label>To'liq ismingiz</label>
+                                                    <div class="form-control-border"></div>
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+
+                                                <div class="form-group form-group-with-icon">
+                                                    <input id="form_email" type="email" name="email"
+                                                           class="form-control" placeholder="" required="required"
+                                                           data-error="Valid email is required.">
+                                                    <label>Email pochtangiz</label>
+                                                    <div class="form-control-border"></div>
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+
+                                            </div>
+                                            <div class="right-column">
+                                                <div class="form-group form-group-with-icon">
+                                                    <textarea id="form_message" name="message" class="form-control"
+                                                              placeholder="" rows="7" required="required"
+                                                              data-error="Please, leave me a message."></textarea>
+                                                    <label>Xabaringiz</label>
+                                                    <div class="form-control-border"></div>
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="g-recaptcha" data-sitekey="6LdqmCAUAAAAAMMNEZvn6g4W5e0or2sZmAVpxVqI"
+                                             data-theme="dark"></div>
+
+                                        <input type="submit" class="button btn-send" value="Jo'natish">
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- End of Contact Form -->
+                        </div>
+
+                    </div>
+                </section>
+                <!-- End of Contact Subpage -->
+            </div>
+            </section>
+            <!-- End of Resume Subpage -->
+
+
+        </div>
+    </div>
+
+</div>
+</div>
+
+<script src="{% static "js/jquery-2.1.3.min.js" %}"></script>
+<script src="{% static "js/modernizr.custom.js" %}"></script>
+<script src="{% static "js/animating.js" %}"></script>
+<script src="{% static "js/imagesloaded.pkgd.min.js" %}"></script>
+<script src="{% static "js/perfect-scrollbar.min.js" %}"></script>
+<script src="{% static "js/jquery.shuffle.min.js" %}"></script>
+<script src="{% static "js/masonry.pkgd.min.js" %}"></script>
+<script src="{% static "js/owl.carousel.min.js" %}"></script>
+<script src="{% static "js/jquery.magnific-popup.min.js" %}"></script>
+<script src="{% static "js/validator.js" %}"></script>
+<script src="{% static "js/main.js" %}"></script>
+</body>
+
+</html>
