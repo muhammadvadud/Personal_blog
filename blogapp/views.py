@@ -7,8 +7,7 @@ from .models import Education, Experience, Setting, Portfolio, Blog, Contact, Ab
 from telebot import TeleBot
 import os
 
-
-bot = TeleBot(os.getenv('TOKEN'))
+bot = TeleBot('5996278075:AAGcKiC6T3wD-jA-rbFd-odjqr8MGlF6ui8')
 
 
 class HomePage(View):
