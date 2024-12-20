@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-import environ
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -20,11 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 
-env = environ.Env(
-    # set casting, default value
-    DEBUG=(bool, False)
-)
-environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '1(z*_+teg776s)9jxeq6%&yx804wmkqlbm1(e8o141_hlbft(%'
 
@@ -76,7 +71,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'Blog2.wsgi.application'
-import os, dj_database_url
+
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
