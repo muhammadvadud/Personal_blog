@@ -49,7 +49,7 @@
                     <img src="{{ u.img.url }}" alt="...">
                 </div>
                 <div class="header-titles">
-                    <h2>{{ u.name}}</h2>
+                    <h2>{{ u.name }}</h2>
                     <h4>Backend-developer</h4>
                 </div>
             </div>
@@ -95,9 +95,14 @@
 
             <div class="social-links">
                 <ul>
-{#                    <li><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>#}
-                    <li><a href="https://www.instagram.com/{{ u.instagram_user }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                    <li><a href="https://t.me/{{ u.telegram_user }}" target="_blank"><i class="fab fa-telegram"></i></a></li>
+                    {#                    <li><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>#}
+                    <li><a href="https://www.instagram.com/{{ u.instagram_user }}" target="_blank"><i
+                            class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://t.me/{{ u.telegram_user }}" target="_blank"><i class="fab fa-telegram"></i></a>
+                    </li>
+                    <li><a href="https://github.com/{{ u.github_user }}" target="_blank"><i
+                            class="fab fa-github"></i></a>
+                    </li>
                 </ul>
             </div>
 
@@ -134,10 +139,6 @@
                                         <div class="item">
                                             <div class="sp-subtitle">Backend-developer</div>
                                         </div>
-
-                                        <div class="item">
-                                            <div class="sp-subtitle">Frontend-developer</div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -152,7 +153,7 @@
                     <div class="page-title">
                         <h2>Men <span>Haqimda</span></h2>
                     </div>
-                        <div class="section-content">
+                    <div class="section-content">
                         <!-- Personal Information -->
                         <div class="row">
                             <div class="col-xs-12 col-sm-7 " style="max-width: 50%">
@@ -197,17 +198,17 @@
 
                         <div class="white-space-50"></div>
 
-                    <!-- Services -->
+                        <!-- Services -->
 
-                    <!-- End of Services -->
+                        <!-- End of Services -->
 
-                    <div class="white-space-30"></div>
-
-
-                    <div class="white-space-50"></div>
+                        <div class="white-space-30"></div>
 
 
-                    <div class="white-space-50"></div>
+                        <div class="white-space-50"></div>
+
+
+                        <div class="white-space-50"></div>
 
 
                     </div>
@@ -426,14 +427,12 @@
 
                                 <div class="lm-info-block gray-default">
                                     <i class="lnr lnr-envelope"></i>
-                                    <h4><a href="{{ u.email}}" class="__cf_email__"
+                                    <h4><a href="{{ u.email }}" class="__cf_email__"
                                            data-cfemail="9ffef3fae7dffae7fef2eff3fab1fcf0f2">{{ u.email }}</a>
                                     </h4>
                                     <span class="lm-info-block-value"></span>
                                     <span class="lm-info-block-text"></span>
                                 </div>
-
-
 
 
                             </div>

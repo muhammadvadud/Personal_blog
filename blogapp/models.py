@@ -63,6 +63,7 @@ class About(models.Model):
 
     instagram_user = models.CharField(max_length=100)
     telegram_user = models.CharField(max_length=100)
+    github_user = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
