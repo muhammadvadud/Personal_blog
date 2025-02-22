@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '1(z*_+teg776s)9jxeq6%&yx804wmkqlbm1(e8o141_hlbft(%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["ganiboyevdev.uz"]
+ALLOWED_HOSTS = ["*","ganiboyevdev.uz"]
 
 # Application definition
 CSRF_TRUSTED_ORIGINS = [
