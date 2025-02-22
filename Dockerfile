@@ -1,8 +1,17 @@
-FROM python:3.11
+# Python image ni tanlaymiz
+FROM python:3.12-slim
 
-WORKDIR /code
-COPY requirements.txt /code/
-RUN pip install -r requirements.txt
+# Ishchi katalogni belgilaymiz
+WORKDIR /app
 
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh  # Skriptni bajarish huquqini berish
+# Talablar faylini nusxalaymiz
+COPY requirements.txt /app/
+
+# Talablarni o'rnatamiz
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Loyiha fayllarini nusxalaymiz
+COPY . /app/
+
+# Django serverini ishga tushirish uchun buyruq
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

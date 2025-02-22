@@ -26,9 +26,12 @@ SECRET_KEY = '1(z*_+teg776s)9jxeq6%&yx804wmkqlbm1(e8o141_hlbft(%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["ganiboyevdev.uz"]
 
 # Application definition
+CSRF_TRUSTED_ORIGINS = [
+    "https://ganiboyevdev.uz",
+]
 
 INSTALLED_APPS = [
     'jazzmin',
@@ -75,11 +78,14 @@ WSGI_APPLICATION = 'Blog2.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('POSTGRES_DB', 'myprojectdb'),
+        'USER': os.getenv('POSTGRES_USER', 'myprojectuser'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'myprojectpassword'),
+        'HOST': os.getenv('DATABASE_HOST', 'db'),
+        'PORT': os.getenv('DATABASE_PORT', '5432'),
     }
 }
 
